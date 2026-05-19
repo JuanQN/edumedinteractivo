@@ -17,92 +17,88 @@
   --radius:12px;--radius-sm:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:2rem 1rem}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:1.5rem 1rem}
 .container{max-width:660px;margin:0 auto}
 
 /* HERO */
-.hero{background:var(--blue);border-radius:var(--radius);padding:1.75rem 2rem;margin-bottom:1.5rem;color:#fff}
+.hero{background:var(--blue);border-radius:var(--radius);padding:1.75rem 2rem;margin-bottom:1rem;color:#fff}
 .hero-tag{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.2);display:inline-block;padding:3px 10px;border-radius:20px;margin-bottom:0.75rem}
 .hero h1{font-size:24px;font-weight:600;margin-bottom:0.4rem;line-height:1.3}
-.hero p{font-size:13px;opacity:0.85;line-height:1.6}
+.hero p{font-size:14px;opacity:0.85;line-height:1.6}
 
-/* PROGRESS */
-.prog-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem}
-.prog-row{display:flex;justify-content:space-between;font-size:13px;color:var(--text-muted);margin-bottom:8px}
-.prog-row span:last-child{font-weight:500;color:var(--blue)}
-.prog-bar{height:7px;background:var(--bg);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+/* NAV BAR INTEGRADA */
+.nav-integrated{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:0.6rem 0.75rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
+.btn-back{display:inline-flex;align-items:center;gap:5px;background:transparent;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 14px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;white-space:nowrap;flex-shrink:0}
+.btn-back:hover{background:var(--bg);color:var(--text)}
+.btn-back:disabled{opacity:0.3;cursor:default;pointer-events:none}
+.btn-next{display:inline-flex;align-items:center;gap:5px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius-sm);padding:6px 14px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;white-space:nowrap;flex-shrink:0}
+.btn-next:hover{background:var(--blue-dark)}
+
+.prog-center{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.prog-label{font-size:12px;color:var(--text-muted)}
+.prog-label span{font-weight:500;color:var(--blue)}
+.prog-bar{width:100%;height:5px;background:var(--bg);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
 .prog-fill{height:100%;background:var(--blue);border-radius:4px;transition:width 0.45s cubic-bezier(0.4,0,0.2,1)}
 
 /* SCREENS */
 .screen{display:none}
-.screen.active{display:flex;flex-direction:column;animation:fadeSlide 0.28s ease}
+.screen.active{display:block;animation:fadeSlide 0.28s ease}
 .screen.back{animation:fadeSlideBack 0.28s ease}
-@keyframes fadeSlide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
-@keyframes fadeSlideBack{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeSlide{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeSlideBack{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
 
 /* CARDS */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;transition:box-shadow 0.2s}
-.card:hover{box-shadow:0 2px 12px rgba(0,0,0,0.06)}
-.card-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:0.6rem;display:flex;align-items:center;gap:8px}
-.card-title i{color:var(--blue);font-size:20px}
-.body-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:0.75rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.35rem;margin-bottom:1rem}
+.card-title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px}
+.card-title i{color:var(--blue);font-size:21px}
+.body-text{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:0.75rem}
 
 /* TIPS */
-.tip{padding:0.75rem 1rem;font-size:13px;color:#0C447C;margin-bottom:1rem;border-left:3px solid var(--blue);background:var(--blue-light);display:flex;align-items:flex-start;gap:8px;line-height:1.5;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
-.tip i{flex-shrink:0;margin-top:1px}
-.tip-warn{padding:0.75rem 1rem;font-size:13px;color:var(--orange);margin-bottom:1rem;border-left:3px solid var(--orange-border);background:var(--orange-light);display:flex;align-items:flex-start;gap:8px;line-height:1.6;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.tip{padding:0.8rem 1rem;font-size:14px;color:#0C447C;margin-bottom:1rem;border-left:3px solid var(--blue);background:var(--blue-light);display:flex;align-items:flex-start;gap:8px;line-height:1.5;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.tip i{flex-shrink:0;margin-top:2px}
+.tip-warn{padding:0.8rem 1rem;font-size:14px;color:var(--orange);margin-bottom:1rem;border-left:3px solid var(--orange-border);background:var(--orange-light);display:flex;align-items:flex-start;gap:8px;line-height:1.6;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
 .tip-warn i{flex-shrink:0;margin-top:2px}
-.tip-pdf{padding:0.75rem 1rem;font-size:13px;color:#3B6D11;margin-bottom:1rem;border-left:3px solid #639922;background:var(--green-light);display:flex;align-items:flex-start;gap:8px;line-height:1.5;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
-.tip-pdf i{flex-shrink:0;margin-top:1px}
-.tip-pdf a{color:#3B6D11;font-weight:500}
+.tip-pdf{padding:0.8rem 1rem;font-size:14px;color:var(--green);margin-bottom:1rem;border-left:3px solid #639922;background:var(--green-light);display:flex;align-items:flex-start;gap:8px;line-height:1.6;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.tip-pdf i{flex-shrink:0;margin-top:2px}
+.tip-pdf a{color:var(--green);font-weight:500;text-decoration:underline}
 
 /* GRIDS */
 .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:0.75rem}
 .req-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.875rem;display:flex;align-items:flex-start;gap:10px}
 .req-item i{color:var(--blue);font-size:20px;flex-shrink:0;margin-top:1px}
-.req-label{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
-.req-val{font-size:12px;color:var(--text-muted)}
+.req-label{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px}
+.req-val{font-size:13px;color:var(--text-muted)}
 
 .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
-.photo-tip{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem;font-size:13px;color:var(--text-muted);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.photo-tip{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem;font-size:14px;color:var(--text-muted);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
 .photo-tip i{color:var(--blue);font-size:18px;flex-shrink:0}
 
 .req-list{list-style:none;margin:0.75rem 0}
-.req-list li{font-size:13px;color:var(--text-muted);padding:6px 0;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+.req-list li{font-size:14px;color:var(--text-muted);padding:7px 0;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
 .req-list li:last-child{border-bottom:none}
 .req-list i{color:var(--blue)}
 
-/* BUTTONS */
-.btn-blue{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius-sm);padding:9px 18px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.15s;font-family:'DM Sans',sans-serif}
-.btn-blue:hover{background:var(--blue-dark)}
-.btn-outline{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--blue);border:1px solid var(--blue);border-radius:var(--radius-sm);padding:9px 18px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.15s;font-family:'DM Sans',sans-serif}
-.btn-outline:hover{background:var(--blue-light)}
-.os-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:0.75rem}
-
-/* NAV */
-.nav-bar{display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
-.btn-back{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--text-muted);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 18px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s}
-.btn-back:hover{background:var(--surface)}
-.btn-next{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius-sm);padding:9px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s}
-.btn-next:hover{background:var(--blue-dark)}
-
-.dots{display:flex;gap:6px;align-items:center}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all 0.3s}
-.dot.active{background:var(--blue);width:20px;border-radius:4px}
-.dot.done{background:var(--green)}
+/* BOTONES DE ACCION */
+.action-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:0.75rem}
+.btn-action-fill{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;border:1px solid var(--blue);border-radius:var(--radius-sm);padding:9px 18px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.15s;font-family:'DM Sans',sans-serif}
+.btn-action-fill:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+.btn-action{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--blue);border:1px solid var(--blue);border-radius:var(--radius-sm);padding:9px 18px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.15s;font-family:'DM Sans',sans-serif}
+.btn-action:hover{background:var(--blue-light)}
 
 /* FINAL */
 .success-icon{width:64px;height:64px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
 .success-icon i{font-size:32px;color:var(--green)}
 .final-title{font-size:20px;font-weight:500;color:var(--text);text-align:center;margin-bottom:0.5rem}
-.final-sub{font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:1.5rem;line-height:1.6}
+.final-sub{font-size:15px;color:var(--text-muted);text-align:center;margin-bottom:0;line-height:1.6}
 
 .warning-box{background:var(--orange-light);border:1px solid #F0997B;border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
 .warn-title{font-size:15px;font-weight:500;color:var(--orange);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.warning-box p{font-size:14px;color:var(--orange);line-height:1.7}
+.warning-box p{font-size:15px;color:var(--orange);line-height:1.7}
 
-.footer-contact{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--text-muted);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.footer-contact{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:var(--text-muted);margin-top:0.5rem;padding-top:1rem;border-top:1px solid var(--border)}
 .footer-contact a{color:var(--blue);text-decoration:none;font-weight:500}
+
+.restart-wrap{display:flex;justify-content:center;margin-top:1rem}
 
 @media(max-width:480px){
   body{padding:1rem 0.75rem}
@@ -110,7 +106,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   .hero h1{font-size:20px}
   .req-grid{grid-template-columns:1fr}
   .photo-grid{grid-template-columns:1fr}
-  .os-btns{flex-direction:column}
+  .action-btns{flex-direction:column}
 }
 </style>
 </head>
@@ -123,12 +119,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <p>Sigue estos pasos antes del día de tu examen. Puedes navegar entre pasos libremente.</p>
   </div>
 
-  <div class="prog-wrap">
-    <div class="prog-row">
-      <span>Tu progreso</span>
-      <span id="prog-text">Paso 0 de 4</span>
+  <!-- BARRA NAVEGACIÓN INTEGRADA -->
+  <div class="nav-integrated">
+    <button class="btn-back" id="btn-back" onclick="goTo(cur-1,true)" disabled>
+      <i class="ti ti-arrow-left"></i> Atrás
+    </button>
+    <div class="prog-center">
+      <div class="prog-label" id="prog-label">Paso <span id="prog-text">0 de 4</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
     </div>
-    <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <button class="btn-next" id="btn-next" onclick="goTo(cur+1,false)">
+      Todo listo, comenzar <i class="ti ti-arrow-right"></i>
+    </button>
   </div>
 
   <!-- S0: REQUISITOS -->
@@ -146,101 +148,75 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       </div>
       <div class="tip"><i class="ti ti-info-circle"></i> Tu usuario y contraseña te fueron enviados por correo electrónico por parte del Consejo.</div>
     </div>
-    <div class="nav-bar">
-      <div></div>
-      <div class="dots" id="dots0"></div>
-      <button class="btn-next" onclick="goTo(1,false)"><i class="ti ti-check"></i> Todo listo, comenzar</button>
-    </div>
   </div>
 
   <!-- S1: PLATAFORMA -->
   <div class="screen" id="s1">
     <div class="card">
-      <div class="card-title"><i class="ti ti-login"></i> Paso 1 — Ingresa a la plataforma</div>
-      <p class="body-text">Entra a la plataforma con el navegador que vayas a usar el día del examen. Ingresa tu usuario y contraseña para iniciar sesión.</p>
-      <div class="tip"><i class="ti ti-info-circle"></i> Usa el mismo navegador y el mismo equipo que usarás el día del examen oficial.</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn-blue" href="https://evh.edtest.ai/index.php" target="_blank"><i class="ti ti-external-link"></i> Ir a la plataforma</a>
-        <a class="btn-outline" href="https://support.google.com/chrome/answer/95414?hl=es-419&co=GENIE.Platform%3DDesktop" target="_blank"><i class="ti ti-refresh"></i> Actualizar Chrome</a>
+      <div class="card-title"><i class="ti ti-login"></i> Ingresa a la plataforma</div>
+      <p class="body-text">El Consejo te enviará por correo electrónico tu usuario y contraseña. Úsalos para iniciar sesión en la plataforma con el navegador que vayas a usar el día del examen.</p>
+      <div class="tip"><i class="ti ti-info-circle"></i> Usa el mismo equipo y navegador que usarás el día del examen oficial.</div>
+      <div class="action-btns">
+        <a class="btn-action-fill" href="https://evh.edtest.ai/index.php" target="_blank"><i class="ti ti-external-link"></i> Ir a la plataforma</a>
+        <a class="btn-action" href="https://support.google.com/chrome/answer/95414?hl=es-419&co=GENIE.Platform%3DDesktop" target="_blank"><i class="ti ti-refresh"></i> Actualizar Chrome</a>
       </div>
-    </div>
-    <div class="nav-bar">
-      <button class="btn-back" onclick="goTo(0,true)"><i class="ti ti-arrow-left"></i> Atrás</button>
-      <div class="dots" id="dots1"></div>
-      <button class="btn-next" onclick="goTo(2,false)">Siguiente <i class="ti ti-arrow-right"></i></button>
     </div>
   </div>
 
   <!-- S2: FOTOS -->
   <div class="screen" id="s2">
     <div class="card">
-      <div class="card-title"><i class="ti ti-user-check"></i> Paso 2 — Verificación facial</div>
+      <div class="card-title"><i class="ti ti-user-check"></i> Verificación facial</div>
       <p class="body-text">La plataforma usará tus fotos para autenticarte durante el examen. El proceso tiene 3 pasos: foto de tu rostro, foto de tu ID y confirmación.</p>
       <div class="photo-grid">
         <div class="photo-tip"><i class="ti ti-shirt"></i> Camisa o blusa con mangas</div>
         <div class="photo-tip"><i class="ti ti-sun"></i> Buena iluminación, fondo blanco o claro sin objetos ni reflejos</div>
-        <div class="photo-tip"><i class="ti ti-eyeglass-off"></i> Sin lentes, sin aretes ni piercings, sin accesorios en el rostro</div>
+        <div class="photo-tip"><i class="ti ti-eyeglass-off"></i> Sin lentes, aretes ni piercings, sin accesorios en el rostro</div>
         <div class="photo-tip"><i class="ti ti-user"></i> Cabello largo fuera de la cara, rostro descubierto</div>
         <div class="photo-tip"><i class="ti ti-focus-centered"></i> Rostro centrado, ni muy lejos ni muy cerca de la cámara</div>
         <div class="photo-tip"><i class="ti ti-id-badge"></i> ID centrada dentro del marco amarillo en pantalla</div>
       </div>
-      <div class="tip-pdf"><i class="ti ti-file-description"></i> Para ver las instrucciones con imágenes a detalle, consulta el <a href="https://drive.google.com/file/d/1siajZ5iH56OhTf2rhpzaL9oWkOE4_UIa/view?usp=sharing" target="_blank">manual en PDF</a> que te fue enviado por el Consejo.</div>
-      <div class="tip"><i class="ti ti-info-circle"></i> Si hay error al validar, puedes reintentar. Al tercer intento puedes solicitar verificación manual — un supervisor te notificará el resultado por correo.</div>
-    </div>
-    <div class="nav-bar">
-      <button class="btn-back" onclick="goTo(1,true)"><i class="ti ti-arrow-left"></i> Atrás</button>
-      <div class="dots" id="dots2"></div>
-      <button class="btn-next" onclick="goTo(3,false)">Siguiente <i class="ti ti-arrow-right"></i></button>
+      <div class="tip-pdf"><i class="ti ti-file-description"></i> Para ver las instrucciones con imágenes a detalle, consulta el <a href="https://drive.google.com/file/d/1siajZ5iH56OhTf2rhpzaL9oWkOE4_UIa/view?usp=sharing" target="_blank">manual en PDF</a> enviado por el Consejo.</div>
+      <div class="tip"><i class="ti ti-info-circle"></i> Si hay error al validar puedes reintentar. Al tercer intento puedes solicitar verificación manual — un supervisor te notificará el resultado por correo.</div>
     </div>
   </div>
 
   <!-- S3: LDB -->
   <div class="screen" id="s3">
     <div class="card">
-      <div class="card-title"><i class="ti ti-lock"></i> Paso 3 — Instala LockDown Browser</div>
+      <div class="card-title"><i class="ti ti-lock"></i> Instala LockDown Browser</div>
       <p class="body-text">Descarga e instala LockDown Browser según tu sistema operativo. Sigue los pasos del instalador hasta hacer clic en Finalizar.</p>
       <div class="tip-warn"><i class="ti ti-alert-triangle"></i><span><strong>Importante:</strong> una vez que abras LockDown Browser tu computadora se bloqueará y no podrás acceder a otras aplicaciones ni a esta guía. Asegúrate de haber leído todos los pasos antes de abrirlo.</span></div>
       <ul class="req-list">
         <li><i class="ti ti-device-desktop"></i> Windows 10 o superior — 1 GB de espacio en disco</li>
         <li><i class="ti ti-brand-apple"></i> macOS 10.15 o superior — 1 GB de espacio en disco</li>
       </ul>
-      <div class="os-btns">
-        <a class="btn-blue" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/windows/latest/LockdownBrowser.exe" target="_blank"><i class="ti ti-brand-windows"></i> Windows 11</a>
-        <a class="btn-outline" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/windows/legacy/LockdownBrowser.exe" target="_blank"><i class="ti ti-brand-windows"></i> Windows 10</a>
-        <a class="btn-outline" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/mac/latest/LockdownBrowser.zip" target="_blank"><i class="ti ti-brand-apple"></i> Mac 11 a 15+</a>
-        <a class="btn-outline" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/mac/legacy/LockdownBrowser.zip" target="_blank"><i class="ti ti-brand-apple"></i> Mac 10.15 a 11</a>
+      <div class="action-btns">
+        <a class="btn-action" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/windows/latest/LockdownBrowser.exe" target="_blank"><i class="ti ti-brand-windows"></i> Windows 11</a>
+        <a class="btn-action" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/windows/legacy/LockdownBrowser.exe" target="_blank"><i class="ti ti-brand-windows"></i> Windows 10</a>
+        <a class="btn-action" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/mac/latest/LockdownBrowser.zip" target="_blank"><i class="ti ti-brand-apple"></i> Mac 11 a 15+</a>
+        <a class="btn-action" href="https://proctoringfiles.blob.core.windows.net/lockdownbrowser/mac/legacy/LockdownBrowser.zip" target="_blank"><i class="ti ti-brand-apple"></i> Mac 10.15 a 11</a>
       </div>
-    </div>
-    <div class="nav-bar">
-      <button class="btn-back" onclick="goTo(2,true)"><i class="ti ti-arrow-left"></i> Atrás</button>
-      <div class="dots" id="dots3"></div>
-      <button class="btn-next" onclick="goTo(4,false)">Siguiente <i class="ti ti-arrow-right"></i></button>
     </div>
   </div>
 
   <!-- S4: EXAMEN PRUEBA -->
   <div class="screen" id="s4">
     <div class="card">
-      <div class="card-title"><i class="ti ti-clipboard-check"></i> Paso 4 — Examen de prueba</div>
+      <div class="card-title"><i class="ti ti-clipboard-check"></i> Examen de prueba</div>
       <p class="body-text">Este examen no afecta tu resultado. Es para que te familiarices con la interfaz antes del día oficial. Al ingresar, la plataforma verificará tu cámara y micrófono.</p>
       <div class="tip"><i class="ti ti-info-circle"></i> El tiempo del examen no se repone ni se reprograma si no atiendes las indicaciones.</div>
       <p class="body-text">Si algún dispositivo falla:</p>
       <ul class="req-list">
-        <li><i class="ti ti-refresh"></i> Presiona F5 para actualizar la pantalla</li>
         <li><i class="ti ti-wifi"></i> Revisa tu conexión a internet</li>
         <li><i class="ti ti-x"></i> Si persiste, sal con la X roja y reinicia tu computadora</li>
       </ul>
-    </div>
-    <div class="nav-bar">
-      <button class="btn-back" onclick="goTo(3,true)"><i class="ti ti-arrow-left"></i> Atrás</button>
-      <div class="dots" id="dots4"></div>
-      <button class="btn-next" onclick="goTo(5,false)"><i class="ti ti-check"></i> Finalizar guía</button>
     </div>
   </div>
 
   <!-- S5: FINAL -->
   <div class="screen" id="s5">
-    <div class="card" style="text-align:center;padding:2rem 1.25rem">
+    <div class="card" style="text-align:center;padding:2rem 1.35rem">
       <div class="success-icon"><i class="ti ti-circle-check"></i></div>
       <div class="final-title">¡Ya estás listo para tu examen!</div>
       <div class="final-sub">Revisaste todos los pasos. Recuerda presentar tu examen de prueba antes del día oficial.</div>
@@ -253,25 +229,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <i class="ti ti-mail"></i>
       ¿Dudas técnicas? Escríbenos a <a href="mailto:contacto@edumedexperts.com">contacto@edumedexperts.com</a>
     </div>
-    <div class="nav-bar" style="justify-content:center;border-top:none;margin-top:1rem">
-      <button class="btn-back" onclick="goTo(0,true)"><i class="ti ti-refresh"></i> Volver al inicio</button>
+    <div class="restart-wrap">
+      <button class="btn-action" onclick="goTo(0,true)"><i class="ti ti-refresh"></i> Volver al inicio</button>
     </div>
   </div>
 
 </div>
 <script>
 var cur=0,total=4;
-function buildDots(id){
-  var el=document.getElementById('dots'+id);
-  if(!el||id===0||id===5)return;
-  el.innerHTML='';
-  for(var i=1;i<=total;i++){
-    var d=document.createElement('div');
-    d.className='dot'+(i===id?' active':i<id?' done':'');
-    el.appendChild(d);
-  }
-}
+var labels=['Todo listo, comenzar','Siguiente','Siguiente','Siguiente','Siguiente',''];
+
 function goTo(n,back){
+  if(n<0||n>5)return;
   var c=document.getElementById('s'+cur);
   var nx=document.getElementById('s'+n);
   if(!nx)return;
@@ -279,17 +248,29 @@ function goTo(n,back){
   c.style.display='none';
   nx.classList.remove('active','back');
   if(back)nx.classList.add('back');
-  nx.style.display='flex';
+  nx.style.display='block';
   void nx.offsetWidth;
   nx.classList.add('active');
   cur=n;
-  buildDots(n);
-  var pct=n===0?0:n===5?100:Math.round(n/total*100);
-  document.getElementById('prog-fill').style.width=pct+'%';
-  document.getElementById('prog-text').textContent=n===0?'Paso 0 de 4':n===5?'Completado':'Paso '+n+' de 4';
+  updateNav();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-buildDots(0);
+
+function updateNav(){
+  var pct=cur===0?0:cur===5?100:Math.round(cur/total*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-text').textContent=cur===5?'Completado':cur+' de '+total;
+  document.getElementById('btn-back').disabled=(cur===0);
+  var btnNext=document.getElementById('btn-next');
+  if(cur===5){
+    btnNext.style.display='none';
+  } else {
+    btnNext.style.display='inline-flex';
+    btnNext.innerHTML=labels[cur]+' <i class="ti ti-arrow-right"></i>';
+  }
+  var lbl=document.getElementById('prog-label');
+  lbl.innerHTML='Paso <span id="prog-text">'+(cur===5?'Completado':cur+' de '+total)+'</span>';
+}
 </script>
 </body>
 </html>
